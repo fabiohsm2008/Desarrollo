@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>PROGRAMIGOS.COM	</title>
+		<style type="text/css">
+			body{
+				background-color:  lightblue;
+			}
+			thead{
+				font-family: Arial;
+				font-size: 15;
+			}
+		</style>
+		<script type="text/javascript">
+			function agregar(){
+				var nom = document.getElementById("nombre");
+				var ap = document.getElementById("apellido");
+				var row = document.createElement("tr");
+				var tbody = document.getElementById("contenido");
+				
+				/*
+				var tdID = document.createElement("td");
+				var tdNombre = document.createElement("td");
+				var tdApellido = document.createElement("td");
+				tdID.innerHTML = tbody.children.length + 1;
+				tdNombre.innerHTML = nom.value;
+				tdApellido.innerHTML = ap.value;
+				row.appendChild(tdID);
+				row.appendChild(tdNombre);
+				row.appendChild(tdApellido);
+				*/
+
+				row.innerHTML = "<tr style = 'background-color: red'><td>" + (tbody.children.length + 1) + "</td><td>" +  nom.value + "</td><td>" + ap.value + "</td></tr>";
+				tbody.appendChild(row);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<div>
+				<span>Nombre :</span>
+				<input type="text" id="nombre" />
+			</div>
+			<div>
+				<span>Apellido :</span>
+				<input type="text" id = "apellido" />
+			</div>
+			<button onclick= "agregar();"> Agregar</button>
+		</div>
+		<table border="5">
+			<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+					</tr>
+				</thead>
+			<tbody id = "contenido">
+				<tr>
+					<td>1</td>
+					<td>Juan</td>
+					<td>Perez</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Cristhian</td>
+					<td>Ocola</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
